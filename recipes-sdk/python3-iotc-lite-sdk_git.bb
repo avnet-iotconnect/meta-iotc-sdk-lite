@@ -1,12 +1,6 @@
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
-
-BB_STRICT_CHECKSUM = "0"
 
 SRC_URI = "https://saleshosted.z13.web.core.windows.net/sdk/python/iotconnect_sdk_lite-1.0.0-py3-none-any.whl"
-
-# Modify these as desired
-PV = "1.0.0"
 
 S = "${WORKDIR}/${BPN}-${PV}"
 
