@@ -1,30 +1,10 @@
-LICENSE = "MIT"
-
-SRC_URI = "https://saleshosted.z13.web.core.windows.net/sdk/python/iotconnect_sdk_lite-1.0.0-py3-none-any.whl"
-
-S = "${WORKDIR}/${BPN}-${PV}"
-
-inherit python3-dir
-
-DEPENDS = "python3-pip-native"
-
-RDEPENDS:${PN} += " python3"
-RDEPENDS:${PN} += " python3-pip"
-
-RDEPENDS:${PN} += " python3-ntplib"
-RDEPENDS:${PN} += " python3-paho-mqtt"
-RDEPENDS:${PN} += " python3-wheel"
-
-distutils_do_configure () {
-	# Specify any needed configure commands here
-	:
-}
-
-distutils_do_compile () {
-	# Specify compilation commands here
-	:
-}
-
-distutils_do_install () {
-	pip3 install iotconnect_sdk_lite-1.0.0-py3-none-any.whl
-}
+DESCRIPTION = "IoTConnect Python Lite SDK"
+HOMEPAGE = "https://github.com/avnet-iotconnect/iotc-python-lite-sdk"
+LICENSE = "CLOSED"
+SRC_URI = "git://github.com/avnet-iotconnect/iotc-python-lite-sdk.git;branch=main"
+SRCREV = "f0b5bf006b716d2de361e3df8b94f684f9872497>"
+PV = "1.0.0+git${SRCPV}"
+PR = "r0"
+S = "${WORKDIR}/git"
+inherit setuptools3
+RDEPENDS:${PN} = "python3 python3-toml"
